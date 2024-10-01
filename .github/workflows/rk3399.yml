@@ -23,8 +23,8 @@ jobs:
         boards:
           [
             {
-              "name": "rk3399-generic",
-              "config": "generic-rk3399_defconfig",
+              "name": "rk3399-evb",
+              "config": "evb-rk3399_defconfig",
             },
             {
               "name": "rk3399-khadas-edge",
@@ -45,6 +45,10 @@ jobs:
             {
               "name": "rk3399-nanopi-r4s",
               "config": "nanopi-r4s-rk3399_defconfig",
+            },
+            {
+              "name": "rk3399-orangepi",
+              "config": "orangepi-rk3399_defconfig",
             },
             {
               "name": "rk3399-pinebook-pro",
@@ -77,6 +81,10 @@ jobs:
             {
               "name": "rk3399-rockpro64",
               "config": "rockpro64-rk3399_defconfig",
+            },
+            {
+              "name": "rk3399pro-rock-pi-n10",
+              "config": "rock-pi-n10-rk3399pro_defconfig",
             },
           ]
 
