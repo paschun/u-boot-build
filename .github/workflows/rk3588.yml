@@ -23,16 +23,28 @@ jobs:
         boards:
           [
             {
+              "name": "rk3588-cm3588-nas",
+              "config": "cm3588-nas-rk3588_defconfig",
+            },
+            {
+              "name": "rk3588s-coolpi-4b",
+              "config": "coolpi-4b-rk3588s_defconfig",
+            },
+            {
+              "name": "rk3588-coolpi-cm5-evb",
+              "config": "coolpi-cm5-evb-rk3588_defconfig",
+            },
+            {
+              "name": "rk3588-evb",
+              "config": "evb-rk3588_defconfig",
+            },
+            {
               "name": "rk3588-generic",
               "config": "generic-rk3588_defconfig",
             },
             {
-              "name": "rk3588-armsom-sige7",
-              "config": "sige7-rk3588_defconfig",
-            },
-            {
-              "name": "rk3588-friendlyelec-cm3588-nas",
-              "config": "cm3588-nas-rk3588_defconfig",
+              "name": "rk3588-jaguar",
+              "config": "jaguar-rk3588_defconfig",
             },
             {
               "name": "rk3588-nanopc-t6",
@@ -47,8 +59,16 @@ jobs:
               "config": "nanopi-r6s-rk3588s_defconfig",
             },
             {
-              "name": "rk3588s-odroid-m2",
-              "config": "odroid-m2-rk3588s_defconfig",
+              "name": "rk3588-neu6a-io",
+              "config": "neu6a-io-rk3588_defconfig",
+            },
+            {
+              "name": "rk3588-neu6b-io",
+              "config": "neu6b-io-rk3588_defconfig",
+            },
+            {
+              "name": "rk3588s-nova",
+              "config": "nova-rk3588s_defconfig",
             },
             {
               "name": "rk3588s-orangepi-5",
@@ -63,16 +83,28 @@ jobs:
               "config": "quartzpro64-rk3588_defconfig",
             },
             {
-              "name": "rk3588s-rock-5a",
+              "name": "rk3588-rock-5-itx",
+              "config": "rock-5-itx-rk3588_defconfig",
+            },
+            {
+              "name": "rk3588s-rock5a",
               "config": "rock5a-rk3588s_defconfig",
             },
             {
-              "name": "rk3588-rock-5b",
+              "name": "rk3588-rock5b",
               "config": "rock5b-rk3588_defconfig",
             },
             {
-              "name": "rk3588-rock-5-itx",
-              "config": "rock-5-itx-rk3588_defconfig",
+              "name": "rk3588-sige7",
+              "config": "sige7-rk3588_defconfig",
+            },
+            {
+              "name": "rk3588-tiger",
+              "config": "tiger-rk3588_defconfig",
+            },
+            {
+              "name": "rk3588-toybrick",
+              "config": "toybrick-rk3588_defconfig",
             },
             {
               "name": "rk3588-turing-rk1",
