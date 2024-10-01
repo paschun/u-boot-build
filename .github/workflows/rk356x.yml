@@ -23,13 +23,8 @@ jobs:
         boards:
           [
             {
-              "name": "rk3566-generic",
-              "config": "generic-rk3568_defconfig",
-              "variant": "RK3566",
-            },
-            {
-              "name": "rk3566-odroid-m1s",
-              "config": "odroid-m1s-rk3566_defconfig",
+              "name": "rk3566-anbernic-rgxx3",
+              "config": "anbernic-rgxx3-rk3566_defconfig",
               "variant": "RK3566",
             },
             {
@@ -38,13 +33,13 @@ jobs:
               "variant": "RK3566",
             },
             {
-              "name": "rk3566-pinenote",
-              "config": "pinenote-rk3566_defconfig",
+              "name": "rk3566-pinetab2",
+              "config": "pinetab2-rk3566_defconfig",
               "variant": "RK3566",
             },
             {
-              "name": "rk3566-pinetab2",
-              "config": "pinetab2-rk3566_defconfig",
+              "name": "rk3566-powkiddy-x55",
+              "config": "powkiddy-x55-rk3566_defconfig",
               "variant": "RK3566",
             },
             {
@@ -88,13 +83,23 @@ jobs:
               "variant": "RK3566",
             },
             {
-              "name": "rk3568-generic",
+              "name": "rk3568-bpi-r2-pro",
+              "config": "bpi-r2-pro-rk3568_defconfig",
+              "variant": "RK3568",
+            },
+            {
+              "name": "rk3568-evb",
+              "config": "evb-rk3568_defconfig",
+              "variant": "RK3568",
+            },
+            {
+              "name": "rk3568-generic-rk3568",
               "config": "generic-rk3568_defconfig",
               "variant": "RK3568",
             },
             {
-              "name": "rk3568-bpi-r2-pro",
-              "config": "bpi-r2-pro-rk3568_defconfig",
+              "name": "rk3568-lubancat-2",
+              "config": "lubancat-2-rk3568_defconfig",
               "variant": "RK3568",
             },
             {
