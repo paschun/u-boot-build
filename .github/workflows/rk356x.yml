@@ -164,7 +164,7 @@ jobs:
       - name: Checkout u-boot - ${{ inputs.uboot_ref }}
         uses: actions/checkout@v4
         with:
-          repository: Kwiboo/u-boot-rockchip
+          repository: u-boot/u-boot
           ref: ${{ inputs.uboot_ref }}
           path: u-boot
 
@@ -188,5 +188,7 @@ jobs:
         with:
           name: ${{ matrix.boards.name }}
           path: |
+            u-boot/idbloader.img
+            u-boot/u-boot.itb
             u-boot/u-boot-rockchip.bin
             u-boot/u-boot-rockchip-spi.bin
