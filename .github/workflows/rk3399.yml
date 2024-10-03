@@ -135,7 +135,7 @@ jobs:
           make ${{ matrix.boards.config }}
           make KCFLAGS="-Werror" CROSS_COMPILE=aarch64-linux-gnu- -j$(nproc)
           tools/mkimage -l u-boot.itb
-          sha256sum idbloader.img u-boot.itb u-boot-rockchip.bin u-boot-rockchip-spi.bin > sha256sums.txt
+          sha256sum idbloader.img u-boot.itb u-boot-rockchip.bin $(ls u-boot-rockchip-spi.bin) > sha256sums.txt
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
