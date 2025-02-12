@@ -89,7 +89,7 @@ jobs:
           sed -i 's/uart id=/uart id=${{ matrix.boards.uart }}/' rkbin/tools/ddrbin_param.txt
           sed -i 's/uart iomux=/uart iomux=${{ matrix.boards.iomux }}/' rkbin/tools/ddrbin_param.txt
           sed -i 's/uart baudrate=/uart baudrate=${{ matrix.boards.baudrate }}/' rkbin/tools/ddrbin_param.txt
-          rkbin/tools/ddrbin_tool rk3308 rkbin/tools/ddrbin_param.txt rkbin/$DDRBIN
+          python3 rkbin/tools/ddrbin_tool.py rk3308 rkbin/tools/ddrbin_param.txt rkbin/$DDRBIN
           export ROCKCHIP_TPL=../rkbin/$DDRBIN
           export BL31=../rkbin/$(confget -f rkbin/RKTRUST/RK3308TRUST.ini -s BL31_OPTION PATH)
           cd u-boot

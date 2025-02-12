@@ -179,7 +179,7 @@ jobs:
           sed -i 's/uart baudrate=/uart baudrate=${{ matrix.boards.baudrate }}/' rkbin/tools/ddrbin_param.txt
           sed -i 's/dis_train_print=/dis_train_print=1/' rkbin/tools/ddrbin_param.txt
           SOC=$(echo "${{ matrix.boards.variant }}" | tr '[:upper:]' '[:lower:]')
-          rkbin/tools/ddrbin_tool $SOC rkbin/tools/ddrbin_param.txt rkbin/$DDRBIN
+          python3 rkbin/tools/ddrbin_tool.py $SOC rkbin/tools/ddrbin_param.txt rkbin/$DDRBIN
           export ROCKCHIP_TPL=../rkbin/$DDRBIN
           export BL31=../rkbin/$(confget -f rkbin/RKTRUST/RK3568TRUST.ini -s BL31_OPTION PATH)
           cd u-boot
