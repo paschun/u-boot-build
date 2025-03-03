@@ -187,9 +187,8 @@ jobs:
 
       - name: Build Trusted Firmware-A - ${{ matrix.boards.variant }}
         run: |
-          SOC=$(echo "${{ matrix.boards.variant }}" | tr '[:upper:]' '[:lower:]')
           cd trusted-firmware-a
-          make CROSS_COMPILE=aarch64-linux-gnu- PLAT=$SOC -j$(nproc)
+          make CROSS_COMPILE=aarch64-linux-gnu- PLAT=rk3568 -j$(nproc) bl31
 
       - name: Build u-boot - ${{ matrix.boards.config }}
         run: |
@@ -199,7 +198,7 @@ jobs:
           SOC=$(echo "${{ matrix.boards.variant }}" | tr '[:upper:]' '[:lower:]')
           python3 rkbin/tools/ddrbin_tool.py $SOC rkbin/tools/ddrbin_param.txt rkbin/$DDRBIN
           export ROCKCHIP_TPL=../rkbin/$DDRBIN
-          export BL31=../trusted-firmware-a/build/$SOC/release/bl31/bl31.elf
+          export BL31=../trusted-firmware-a/build/rk3568/release/bl31/bl31.elf
           cd u-boot
           make mrproper
           make ${{ matrix.boards.config }}
