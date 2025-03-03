@@ -11,6 +11,7 @@ GitHub Actions workflows to build u-boot for a few Rockchip boards.
 
 - [u-boot/u-boot](https://github.com/u-boot/u-boot)
 - [rockchip-linux/rkbin](https://github.com/rockchip-linux/rkbin)
+- [TrustedFirmware-A/trusted-firmware-a](https://github.com/TrustedFirmware-A/trusted-firmware-a)
 
 ### Produced artifacts
 
