@@ -1,15 +1,10 @@
 name: Build u-boot for RK356x
-run-name: u-boot ${{ inputs.uboot_ref }} for RK356x
+run-name: u-boot ${{ inputs.uboot_ref }} and TF-A ${{ inputs.tf-a_ref }} for RK356x
 on:
   workflow_dispatch:
     inputs:
       uboot_ref:
         description: u-boot ref
-        required: true
-        default: master
-        type: string
-      rkbin_ref:
-        description: rkbin ref
         required: true
         default: master
         type: string
@@ -148,11 +143,11 @@ jobs:
           sudo apt install gcc python3-pyelftools confget libgnutls28-dev uuid-dev
           gcc --version
 
-      - name: Checkout rkbin - ${{ inputs.rkbin_ref }}
+      - name: Checkout rkbin
         uses: actions/checkout@v4
         with:
           repository: rockchip-linux/rkbin
-          ref: ${{ inputs.rkbin_ref }}
+          ref: master
           path: rkbin
 
       - name: Checkout ARM Trusted Firmware-A - ${{ inputs.tf-a_ref }}
