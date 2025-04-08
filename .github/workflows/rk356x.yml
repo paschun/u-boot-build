@@ -183,11 +183,12 @@ jobs:
           set -ex
           DDRBIN=$(confget -f rkbin/RKBOOT/${{ matrix.boards.variant }}MINIALL.ini -s LOADER_OPTION FlashData)
 
-          if test -n "${{ matrix.board.baudrate }}"; then
+          #if test -n "${{ matrix.boards.baudrate }}"; then
               sed -i 's/uart baudrate=.*/uart baudrate=${{ matrix.boards.baudrate }}/' rkbin/tools/ddrbin_param.txt
+              sed -i 's/link_ecc_en=.*/link_ecc_en=1/' rkbin/tools/ddrbin_param.txt
               SOC=$(echo "${{ matrix.boards.variant }}" | tr '[:upper:]' '[:lower:]')
               python3 rkbin/tools/ddrbin_tool.py $SOC rkbin/tools/ddrbin_param.txt rkbin/$DDRBIN
-          fi
+          #fi
 
           export ROCKCHIP_TPL=../rkbin/$DDRBIN
           export BL31=../trusted-firmware-a/build/rk3568/release/bl31/bl31.elf
