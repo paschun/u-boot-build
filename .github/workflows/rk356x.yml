@@ -74,7 +74,7 @@ jobs:
       # https://devel.ringlet.net/textproc/confget/
       - name: Build u-boot - ${{ matrix.boards.config }}
         run: |
-          set -ex
+          set -xeuo pipefail
           DDRBIN=$(confget -f rkbin/RKBOOT/${{ matrix.boards.variant }}MINIALL.ini -s LOADER_OPTION FlashData)
 
           #if test -n "${{ matrix.boards.baudrate }}"; then
@@ -88,6 +88,10 @@ jobs:
           export ROCKCHIP_TPL=../rkbin/$DDRBIN
           export BL31=../trusted-firmware-a/build/rk3568/release/bl31/bl31.elf
           cd u-boot
+
+          curl https://raw.githubusercontent.com/torvalds/linux/refs/heads/master/arch/arm64/boot/dts/rockchip/rk356x-base.dtsi -o dts/upstream/src/arm64/rockchip/rk356x-base.dtsi
+          git --no-pager diff
+
           make mrproper
           make ${{ matrix.boards.config }}
           make KCFLAGS="-Werror" -j$(nproc)
