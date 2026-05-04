@@ -89,7 +89,8 @@ jobs:
           export BL31=../trusted-firmware-a/build/rk3568/release/bl31/bl31.elf
           cd u-boot
 
-          curl https://raw.githubusercontent.com/torvalds/linux/refs/heads/master/arch/arm64/boot/dts/rockchip/rk356x-base.dtsi -o dts/upstream/src/arm64/rockchip/rk356x-base.dtsi
+          curl https://github.com/torvalds/linux/commit/5918bf2a17f4689abfb94d341c5240088f8bd16e.patch | \
+              git apply -p5 --directory=dts/upstream/src/arm64/
           git --no-pager diff
 
           make mrproper
