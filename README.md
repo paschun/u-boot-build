@@ -31,7 +31,7 @@ dd if=u-boot-rockchip.bin of=/dev/mmcblk0 bs=32k seek=1 conv=fsync
 - Run from U-Boot cmdline:
 ```
 # Read u-boot-rockchip.bin from first partition of an SD card
-load mmc 1:1 10000000 u-boot-rockchip.bin
+load mmc 1:1 $kernel_addr_r u-boot-rockchip.bin
 
 # Change to eMMC
 mmc dev 0
@@ -56,8 +56,10 @@ Or using U-Boot cmdline:
 # Initialize SPI flash
 sf probe
 
-# Read u-boot-rockchip-spi.bin from first partition of an SD card
-load mmc 1:1 10000000 u-boot-rockchip-spi.bin
+# Read u-boot-rockchip-spi.bin from 1st partition of an SD card. For 2nd partition, run `load mmc 1:2`.
+# Load file into $kernel_addr_r, which is a memory location definitely safe for a large blob.
+# On odroid-m1, kernel_addr_r=0x02000000
+load mmc 1:1 $kernel_addr_r u-boot-rockchip-spi.bin
 
 # Write to begining of SPI flash
 sf update $fileaddr 0 $filesize
