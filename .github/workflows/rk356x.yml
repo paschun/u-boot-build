@@ -89,10 +89,6 @@ jobs:
           export BL31=../trusted-firmware-a/build/rk3568/release/bl31/bl31.elf
           cd u-boot
 
-          curl https://github.com/torvalds/linux/commit/5918bf2a17f4689abfb94d341c5240088f8bd16e.patch | \
-              git apply -p5 --directory=dts/upstream/src/arm64/
-          git --no-pager diff
-
           make mrproper
           make ${{ matrix.boards.config }}
           make KCFLAGS="-Werror" -j$(nproc)
